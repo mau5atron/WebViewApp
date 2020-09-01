@@ -7,9 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <WebKit/WebKit.h>
+#import <QuartzCore/QuartzCore.h>
 
-@interface ViewController : UIViewController
 
+@interface ViewController : UIViewController <WKNavigationDelegate>
+
+@property (weak, nonatomic) IBOutlet WKWebView *webView;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *actInd;
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+
+- (IBAction)stopLoading:(id)sender;
+- (IBAction)refreshPage:(id)sender;
+- (IBAction)back:(id)sender;
+- (IBAction)forward:(id)sender;
 
 @end
 
