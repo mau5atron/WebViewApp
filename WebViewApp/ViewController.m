@@ -53,4 +53,11 @@
 	}
 }
 
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+	[self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://%@", self.searchBar.text]]]];
+	// string format gets replaced with whatever we enter into the search bar
+	
+	[searchBar resignFirstResponder]; // hides keyboard
+}
+
 @end
